@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-
-import mapImage from '../assets/map_sketch.png'; 
+// import mapImage from '../assets/map_sketch.png'; // 이미지가 있다면 주석 해제
 
 export default function Map() {
   // 삼산월드컨벤션센터 좌표 및 정보
@@ -15,9 +14,10 @@ export default function Map() {
   return (
     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mx-4">
       {/* 1. 약도 이미지 영역 */}
-      <div className="w-full h-30 bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
-        {/* 이미지를 넣으셨다면 아래 주석을 풀고 사용하세요 */}
-        <img src={mapImage} alt="약도" className="w-full h-full object-cover" />
+      <div className="w-full h-64 bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
+        {/* 임시 텍스트 (이미지가 없을 때 보임) */}
+        <span className="text-gray-400 text-sm">약도 이미지를 넣어주세요</span>
+        {/* <img src={mapImage} alt="약도" className="w-full h-full object-cover" /> */}
       </div>
       
       {/* 2. 텍스트 정보 */}
@@ -45,17 +45,16 @@ export default function Map() {
         >
           카카오맵
         </a>
+        {/* 티맵 수정됨: API 키 없이 앱을 바로 엽니다 */}
         <a 
-          href={`https://apis.openapi.sk.com/tmap/app/routes?appKey=YOUR_APP_KEY&name=${encodeURIComponent(location.name)}&lon=${location.lng}&lat=${location.lat}`} 
-          target="_blank" 
-          rel="noreferrer"
+          href={`tmap://route?goalname=${encodeURIComponent(location.name)}&goalx=${location.lng}&goaly=${location.lat}`} 
           className="flex-1 bg-[#F5446F] text-white py-3 rounded-lg text-sm font-bold text-center hover:opacity-90 transition shadow-sm"
         >
           티맵
         </a>
       </div>
 
-      {/* 4. 교통편 안내 (디테일!) */}
+      {/* 4. 교통편 안내 */}
       <div className="text-left bg-gray-50 p-5 rounded-lg text-sm space-y-4 text-gray-700">
         <div>
           <strong className="block text-gray-900 mb-1">🚇 지하철</strong>
