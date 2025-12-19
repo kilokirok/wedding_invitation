@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-// import mapImage from '../assets/map_sketch.png'; // 이미지가 있다면 주석 해제
+import mapImage from '../assets/map_sketch.png'; 
 
 export default function Map() {
   // 삼산월드컨벤션센터 좌표 및 정보
@@ -14,10 +14,9 @@ export default function Map() {
   return (
     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mx-4">
       {/* 1. 약도 이미지 영역 */}
-      <div className="w-full h-64 bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
-        {/* 임시 텍스트 (이미지가 없을 때 보임) */}
-        <span className="text-gray-400 text-sm">약도 이미지를 넣어주세요</span>
-        {/* <img src={mapImage} alt="약도" className="w-full h-full object-cover" /> */}
+      <div className="w-full bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
+
+        <img src={mapImage} alt="약도" className="w-full h-full object-cover" />
       </div>
       
       {/* 2. 텍스트 정보 */}
