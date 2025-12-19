@@ -42,8 +42,8 @@ export default function Account() {
   return (
     <div className="w-full px-4">
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2">
-        <AccountItem title="신랑측 마음 전하실 곳" name="김철수" bank="국민은행" account="111-2222-3333" />
-        <AccountItem title="신부측 마음 전하실 곳" name="이영희" bank="우리은행" account="999-8888-7777" />
+        <AccountItem title="신랑측 마음 전하실 곳" name="승지열" bank="국민은행" account="28510204372742" />
+        <AccountItem title="신부측 마음 전하실 곳" name="김채린" bank="우리은행" account="999-8888-7777" />
       </div>
     </div>
   );

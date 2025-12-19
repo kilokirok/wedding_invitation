@@ -2,18 +2,15 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 
-// 컴포넌트 불러오기 (파일이 있는지 확인하세요!)
 import Gallery from './components/Gallery';
 import Map from './components/Map';
 import Account from './components/Account';
 
 export default function App() {
   
-  // ==============================================
-  // 1. 카카오톡 공유 설정 (여기를 수정하세요!)
-  // ==============================================
+
   const KAKAO_KEY = "b0498ba04cb6edfe173bb1b92b6ff58d"; 
-  // 예시: const KAKAO_KEY = "a1b2c3d4e5...";
+
 
   useEffect(() => {
     // 1-1. 앱 켜지면 꽃가루 펑! 🎉
@@ -36,7 +33,7 @@ export default function App() {
       window.Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-          title: '철수 & 영희 결혼합니다 💍',
+          title: '지열 & 채린 결혼합니다 💍',
           description: '2025년 10월 25일 토요일 오후 12시 30분\n서울 신라호텔',
           // 주의: 로컬(localhost) 테스트 중에는 이미지가 안 보일 수 있습니다.
           // 배포 후에는 실제 이미지 주소를 넣어야 친구들에게 잘 보입니다.
