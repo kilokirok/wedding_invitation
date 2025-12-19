@@ -5,6 +5,7 @@ import confetti from 'canvas-confetti';
 import Gallery from './components/Gallery';
 import Map from './components/Map';
 import Account from './components/Account';
+import thumbnail from './assets/thumbnail.png';
 
 export default function App() {
   
@@ -30,6 +31,7 @@ export default function App() {
 
   const shareKakao = () => {
     if (window.Kakao && window.Kakao.isInitialized()) {
+      const realImageUrl = new URL(thumbnail, window.location.href).href;
       window.Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
@@ -37,7 +39,7 @@ export default function App() {
           description: '2026년 07월 04일 토요일 오후 12시 10분\n삼산월드컨벤션 센터',
           // 주의: 로컬(localhost) 테스트 중에는 이미지가 안 보일 수 있습니다.
           // 배포 후에는 실제 이미지 주소를 넣어야 친구들에게 잘 보입니다.
-          imageUrl: 'https://picsum.photos/800/400', 
+          imageUrl: realImageUrl, 
           link: {
             mobileWebUrl: window.location.href, // 현재 접속한 주소 자동 사용
             webUrl: window.location.href,
