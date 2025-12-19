@@ -15,16 +15,9 @@ export default function Map() {
   return (
     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm mx-4">
       {/* 1. 약도 이미지 영역 */}
-      <div className="w-full h-64 bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
+      <div className="w-full h-30 bg-gray-100 rounded-lg mb-6 overflow-hidden relative flex items-center justify-center">
         {/* 이미지를 넣으셨다면 아래 주석을 풀고 사용하세요 */}
         <img src={mapImage} alt="약도" className="w-full h-full object-cover" />
-        
-        {/* 이미지가 없을 때 보이는 대체 텍스트 */}
-        <div className="text-gray-400 text-sm text-center px-4">
-          <p className="mb-2">📍</p>
-          <p>src/assets/map_sketch.png</p>
-          <p>이미지를 넣어주세요</p>
-        </div>
       </div>
       
       {/* 2. 텍스트 정보 */}
@@ -77,7 +70,7 @@ export default function Map() {
         <div>
           <strong className="block text-gray-900 mb-1">🚗 자가용/주차</strong>
           <p>네비게이션: '삼산월드체육관' 또는 '삼산월드컨벤션센터' 검색</p>
-          <p className="text-blue-600 font-bold mt-1">🅿️ 주차 2시간 무료 (1,000대 수용 가능)</p>
+          <p className="text-blue-600 font-bold mt-1">🅿️ 주차 2시간 무료</p>
         </div>
       </div>
     </div>

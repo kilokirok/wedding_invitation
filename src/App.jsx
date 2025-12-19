@@ -34,7 +34,7 @@ export default function App() {
         objectType: 'feed',
         content: {
           title: '지열 & 채린 결혼합니다 💍',
-          description: '2025년 10월 25일 토요일 오후 12시 30분\n서울 신라호텔',
+          description: '2026년 07월 04일 토요일 오후 12시 10분\n삼산월드컨벤션 센터',
           // 주의: 로컬(localhost) 테스트 중에는 이미지가 안 보일 수 있습니다.
           // 배포 후에는 실제 이미지 주소를 넣어야 친구들에게 잘 보입니다.
           imageUrl: 'https://picsum.photos/800/400', 
@@ -70,10 +70,10 @@ export default function App() {
           className="text-center z-10"
         >
           <p className="text-sm tracking-[0.3em] text-gray-500 mb-6">WEDDING INVITATION</p>
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">철수 & 영희</h1>
+          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">지열 & 채린</h1>
           <div className="w-12 h-[1px] bg-gray-400 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-700 mb-1">2025년 10월 25일 토요일</p>
-          <p className="text-gray-500">오후 12시 30분</p>
+          <p className="text-lg text-gray-700 mb-1">2026년 07월 04일 토요일</p>
+          <p className="text-gray-500">오후 12시 10분</p>
         </motion.div>
         
         {/* 장식용 원 */}
@@ -82,13 +82,32 @@ export default function App() {
 
       {/* 2. 인사말 */}
       <Section title="초대합니다">
-        <p className="leading-8 text-gray-600 text-sm">
-          서로가 마주보며 다져온 사랑을<br/>
-          이제 함께 한 곳을 바라보며<br/>
-          걸어갈 수 있는 큰 사랑으로 키우고자 합니다.<br/>
-          저희 두 사람이 사랑의 이름으로<br/>
-          지켜나갈 수 있게 앞날을 축복해 주십시오.
-        </p>
+        <div className="flex flex-col items-center text-center">
+          
+          {/* 상단 멘트 */}
+          <p className="leading-9 text-gray-600 text-sm mb-8 break-keep">
+            빛나는 꿈을 가진 사람을 만나<br/>
+            앞으로 같은 꿈을 꾸며<br/>
+            함께 이루어 가려고 합니다.<br/>
+            <br/>
+            귀한 걸음 하시어 따뜻한 격려로<br/>
+            저희의 앞날을 응원해 주시면<br/>
+            더 없는 기쁨으로 간직 하겠습니다.
+          </p>
+
+          {/* 이름 영역 (강조) */}
+          <div className="bg-gray-50 px-8 py-4 rounded-lg border border-gray-100 w-full max-w-xs">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-500 text-xs">신랑</span>
+              <span className="font-serif text-lg font-bold text-gray-800">승지열</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-500 text-xs">신부</span>
+              <span className="font-serif text-lg font-bold text-gray-800">김채린</span>
+            </div>
+          </div>
+
+        </div>
       </Section>
 
       {/* 3. 갤러리 */}
