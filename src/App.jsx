@@ -7,7 +7,7 @@ import Map from './components/Map';
 import Account from './components/Account';
 import Guestbook from './components/Guestbook';
 import thumbnail from './assets/thumbnail.png';
-import mainBgImage from './assets/gallery/photo7.jpeg';
+import mainBgImage from './assets/gallery/photo13.jpeg';
 
 export default function App() {
   
