@@ -71,7 +71,7 @@ export default function Guestbook() {
         </div>
         <button 
           type="submit"
-          className="w-full bg-[#fae100] text-[#3b1e1e] font-bold py-3 rounded-lg hover:bg-yellow-400 transition shadow-sm"
+          className="w-full bg-white text-[#3b1e1e] font-bold py-3 rounded-lg hover:bg-[#f0f0f0] transition shadow-sm"
         >
           축하 메시지 남기기 💌
         </button>
