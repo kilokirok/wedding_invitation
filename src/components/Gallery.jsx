@@ -19,9 +19,10 @@ import img8 from '../assets/gallery/photo8.jpeg';
 import img9 from '../assets/gallery/photo9.jpeg';
 import img10 from '../assets/gallery/photo10.jpeg';
 import img11 from '../assets/gallery/photo11.jpeg';
+import img12 from '../assets/gallery/photo12.jpg';
 
 const images = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12
 ];
 
 export default function Gallery() {

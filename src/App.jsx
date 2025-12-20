@@ -5,7 +5,9 @@ import confetti from 'canvas-confetti';
 import Gallery from './components/Gallery';
 import Map from './components/Map';
 import Account from './components/Account';
+import Guestbook from './components/Guestbook';
 import thumbnail from './assets/thumbnail.png';
+import mainBgImage from './assets/gallery/photo7.jpeg';
 
 export default function App() {
   
@@ -63,31 +65,34 @@ export default function App() {
   return (
     <div className="min-h-screen max-w-md mx-auto bg-white shadow-2xl overflow-hidden font-sans pb-20">
       
-      {/* 1. 메인 커버 */}
-      <section className="h-screen flex flex-col justify-center items-center relative bg-wedding-pink">
+{/* 1. 메인 커버 (배경 이미지 적용) */}
+      <section 
+        className="h-screen flex flex-col justify-center items-center relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${mainBgImage})` }}
+      >
+        {/* 배경 오버레이 (사진 위에 검은 반투명 막을 씌워 글씨 가독성 확보) */}
+        {/* bg-black/30 숫자를 10~90 사이로 조절하여 밝기를 맞추세요 */}
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
+
         <motion.div 
           initial={{ opacity: 0, y: 30 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
-          className="text-center z-10"
+          transition={{ duration: 1.2 }}
+          className="text-center z-10 relative"
         >
-          <p className="text-sm tracking-[0.3em] text-gray-500 mb-6">WEDDING INVITATION</p>
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">지열 & 채린</h1>
-          <div className="w-12 h-[1px] bg-gray-400 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-700 mb-1">2026년 07월 04일 토요일</p>
-          <p className="text-gray-500">오후 12시 10분</p>
+          <p className="text-sm tracking-[0.3em] text-white/90 mb-6 font-light drop-shadow-md">WEDDING INVITATION</p>
+          <h1 className="text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">지열 & 채린</h1>
+          <div className="w-12 h-[1px] bg-white/80 mx-auto mb-6 shadow-sm"></div>
+          <p className="text-xl text-white/95 mb-2 font-medium drop-shadow-md">2026년 07월 04일 토요일</p>
+          <p className="text-white/80 text-lg drop-shadow-md">오후 12시 10분</p>
         </motion.div>
-        
-        {/* 장식용 원 */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       </section>
 
       {/* 2. 인사말 */}
-      <Section title="초대합니다">
+      <Section title="모시는 글">
         <div className="flex flex-col items-center text-center">
-          
           {/* 상단 멘트 */}
-          <p className="leading-9 text-gray-600 text-sm mb-8 break-keep">
+          <p className="leading-9 text-gray-600 text-xl mb-10 break-keep">
             빛나는 꿈을 가진 사람을 만나<br/>
             앞으로 같은 꿈을 꾸며<br/>
             함께 이루어 가려고 합니다.<br/>
@@ -97,16 +102,23 @@ export default function App() {
             더 없는 기쁨으로 간직 하겠습니다.
           </p>
 
-          {/* 이름 영역 (강조) */}
-          <div className="bg-gray-50 px-8 py-4 rounded-lg border border-gray-100 w-full max-w-xs">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-500 text-xs">신랑</span>
-              <span className="font-serif text-lg font-bold text-gray-800">승지열</span>
+          {/* 이름 영역 (혼주 포함 수정됨) */}
+          <div className="bg-gray-50 py-8 px-4 rounded-xl border border-gray-100 w-full max-w-sm space-y-6">
+            
+            {/* 신랑 측 */}
+            <div className="flex justify-center items-center gap-2 flex-wrap">
+              <span className="text-gray-600 font-medium">승영현 · 김은희</span>
+              <span className="text-gray-400 text-sm">의 차남</span>
+              <span className="font-serif text-xl font-bold text-gray-900">승지열</span>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-500 text-xs">신부</span>
-              <span className="font-serif text-lg font-bold text-gray-800">김채린</span>
+
+            {/* 신부 측 */}
+            <div className="flex justify-center items-center gap-2 flex-wrap">
+              <span className="text-gray-600 font-medium">김치곤 · 정수민</span>
+              <span className="text-gray-400 text-sm">의 장녀</span>
+              <span className="font-serif text-xl font-bold text-gray-900">김채린</span>
             </div>
+
           </div>
 
         </div>
@@ -127,7 +139,12 @@ export default function App() {
         <Account />
       </Section>
 
-      {/* 6. 공유하기 (카톡 버튼) */}
+      {/* 6. 방명록 */}
+      <Section title="방명록">
+        <Guestbook />
+      </Section>
+
+      {/* 7. 공유하기 (카톡 버튼) */}
       <footer className="py-12 bg-gray-50 text-center">
         <button 
           onClick={shareKakao}
