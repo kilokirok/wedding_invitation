@@ -66,9 +66,9 @@ function AccountGroup({ title, accounts }) {
 export default function Account() {
   // 1. 신랑측 계좌 목록
   const groomAccounts = [
-    { name: "승영현", relation: "아버지", bank: "농협은행", account: "-" },
+    { name: "승영현", relation: "아버지", bank: "국민은행", account: "652301-01-509542" },
     { name: "김은희", relation: "어머니", bank: "신한은행", account: "110-267-847259" },
-    { name: "승지열", relation: "신랑", bank: "국민은행", account: "28510204372742" },
+    { name: "승지열", relation: "신랑", bank: "국민은행", account: "285102-04-372742" },
   ];
 
   // 2. 신부측 계좌 목록
