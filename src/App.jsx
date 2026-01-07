@@ -75,16 +75,16 @@ export default function App() {
           description: '2026년 07월 04일 토요일 오후 12시 10분\n삼산월드컨벤션 센터',
           imageUrl: realImageUrl, 
           link: {
-            mobileWebUrl: realImageUrl,
-            webUrl: realImageUrl,
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
           },
         },
         buttons: [
           {
             title: '청첩장 보러가기',
             link: {
-              mobileWebUrl: realImageUrl,
-              webUrl: realImageUrl,
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
             },
           },
         ],
