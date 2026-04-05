@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/zoom'; // 핀치 줌을 위한 CSS 필수
+import 'swiper/css/zoom'; // 핀치 줌 필수 CSS
 
 // 이미지 import
 import img1 from '../assets/gallery/photo1.jpeg';
@@ -63,7 +63,7 @@ export default function Gallery() {
         사진을 터치하면 크게 볼 수 있어요
       </p>
 
-      {/* 2. 확대 보기 모달 (여기서 핀치 줌 작동) */}
+      {/* 2. 확대 보기 모달 (핀치 줌 적용) */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -88,8 +88,7 @@ export default function Gallery() {
             >
               <Swiper
                 modules={[Navigation, Pagination, A11y, Zoom]}
-                // 핀치 줌 설정: 최대 3배까지 확대 가능 (숫자를 조절하여 확대 정도 변경 가능)
-                zoom={{ maxRatio: 3, minRatio: 1 }} 
+                zoom={{ maxRatio: 3 }} // 최대 3배까지 핀치 줌 허용
                 initialSlide={selectedIndex}
                 spaceBetween={20}
                 slidesPerView={1}
@@ -98,13 +97,13 @@ export default function Gallery() {
                 className="w-full h-full"
               >
                 {images.map((src, index) => (
-                  <SwiperSlide key={index} className="flex items-center justify-center">
-                    {/* 모바일 핀치 줌을 활성화하는 필수 클래스 (이 태그 안에서 줌이 일어납니다) */}
-                    <div className="swiper-zoom-container w-full h-full p-4">
+                  <SwiperSlide key={index}>
+                    {/* Swiper 줌 기능 충돌을 막기 위해 컨테이너에 임의의 크기나 패딩을 주지 않습니다 */}
+                    <div className="swiper-zoom-container">
                       <img 
                         src={src} 
                         alt={`Detail View ${index + 1}`} 
-                        className="max-w-full max-h-full object-contain shadow-2xl"
+                        className="object-contain max-h-screen max-w-full"
                       />
                     </div>
                   </SwiperSlide>
