@@ -60,7 +60,7 @@ export default function Gallery() {
       </Swiper>
       
       <p className="text-center text-xs text-gray-400 mt-2">
-        사진을  수 있어요
+        사진을 터치해서 크게 볼 수 있어요
       </p>
 
       {/* 2. 확대 보기 모달 (핀치 줌 적용) */}
