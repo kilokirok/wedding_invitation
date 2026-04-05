@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Navigation, Pagination, A11y, Zoom } from 'swiper/modules';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/zoom';
 
-// 이미지 import (기존과 동일)
+// 이미지 import
 import img1 from '../assets/gallery/photo1.jpeg';
 import img2 from '../assets/gallery/photo2.jpeg';
 import img3 from '../assets/gallery/photo3.jpeg';
@@ -27,7 +28,7 @@ const images = [
 ];
 
 export default function Gallery() {
-  // 이제 src가 아니라 '몇 번째 사진인지(index)'를 저장합니다.
+  // src가 아니라 '몇 번째 사진인지(index)'를 저장합니다.
   // null이면 닫힌 상태, 숫자가 있으면 그 순서의 사진이 열린 상태입니다.
   const [selectedIndex, setSelectedIndex] = useState(null);
 
@@ -64,7 +65,7 @@ export default function Gallery() {
         사진을 터치하면 크게 볼 수 있어요
       </p>
 
-      {/* 2. 확대 보기 모달 (여기에도 Swiper를 넣음) */}
+      {/* 2. 확대 보기 모달 */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -89,17 +90,19 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <Swiper
-                modules={[Navigation, Pagination, A11y]}
-                initialSlide={selectedIndex} // 클릭했던 그 사진부터 시작!
+                modules={[Navigation, Pagination, A11y, Zoom]}
+                zoom={true} // 줌 기능 활성화
+                initialSlide={selectedIndex} // 클릭했던 그 사진부터 시작
                 spaceBetween={20}
                 slidesPerView={1}
                 navigation={true} // 화살표 표시
-                pagination={{ clickable: true, type: 'fraction' }} // "1 / 11" 형태의 쪽수 표시
+                pagination={{ clickable: true, type: 'fraction' }} // "1 / 13" 형태의 쪽수 표시
                 className="w-full h-full"
               >
                 {images.map((src, index) => (
                   <SwiperSlide key={index} className="flex items-center justify-center">
-                    <div className="w-full h-full flex items-center justify-center p-4">
+                    {/* 줌 기능을 위해 swiper-zoom-container 클래스 적용 */}
+                    <div className="swiper-zoom-container w-full h-full p-4">
                       <img 
                         src={src} 
                         alt={`Detail View ${index + 1}`} 
