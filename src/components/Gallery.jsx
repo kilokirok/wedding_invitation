@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/zoom';
+import 'swiper/css/zoom'; // 핀치 줌을 위한 CSS 필수
 
 // 이미지 import
 import img1 from '../assets/gallery/photo1.jpeg';
@@ -28,8 +28,6 @@ const images = [
 ];
 
 export default function Gallery() {
-  // src가 아니라 '몇 번째 사진인지(index)'를 저장합니다.
-  // null이면 닫힌 상태, 숫자가 있으면 그 순서의 사진이 열린 상태입니다.
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   return (
@@ -49,7 +47,7 @@ export default function Gallery() {
           <SwiperSlide key={index}>
             <div 
               className="w-full h-full cursor-pointer"
-              onClick={() => setSelectedIndex(index)} // 클릭 시 인덱스 저장
+              onClick={() => setSelectedIndex(index)} // 터치 시 모달 열기
             >
               <img 
                 src={src} 
@@ -65,7 +63,7 @@ export default function Gallery() {
         사진을 터치하면 크게 볼 수 있어요
       </p>
 
-      {/* 2. 확대 보기 모달 */}
+      {/* 2. 확대 보기 모달 (여기서 핀치 줌 작동) */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -73,7 +71,7 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
-            onClick={() => setSelectedIndex(null)} // 배경 누르면 닫기
+            onClick={() => setSelectedIndex(null)} 
           >
             {/* 닫기 버튼 */}
             <button 
@@ -83,25 +81,25 @@ export default function Gallery() {
               &times;
             </button>
 
-            {/* 모달 내부 슬라이더 */}
-            {/* 배경 클릭 이벤트 전파 방지 (e.stopPropagation)를 위해 div로 감쌈 */}
+            {/* 모달 내부 줌 슬라이더 */}
             <div 
               className="w-full h-full flex items-center" 
               onClick={(e) => e.stopPropagation()}
             >
               <Swiper
                 modules={[Navigation, Pagination, A11y, Zoom]}
-                zoom={true} // 줌 기능 활성화
-                initialSlide={selectedIndex} // 클릭했던 그 사진부터 시작
+                // 핀치 줌 설정: 최대 3배까지 확대 가능 (숫자를 조절하여 확대 정도 변경 가능)
+                zoom={{ maxRatio: 3, minRatio: 1 }} 
+                initialSlide={selectedIndex}
                 spaceBetween={20}
                 slidesPerView={1}
-                navigation={true} // 화살표 표시
-                pagination={{ clickable: true, type: 'fraction' }} // "1 / 13" 형태의 쪽수 표시
+                navigation={true}
+                pagination={{ clickable: true, type: 'fraction' }}
                 className="w-full h-full"
               >
                 {images.map((src, index) => (
                   <SwiperSlide key={index} className="flex items-center justify-center">
-                    {/* 줌 기능을 위해 swiper-zoom-container 클래스 적용 */}
+                    {/* 모바일 핀치 줌을 활성화하는 필수 클래스 (이 태그 안에서 줌이 일어납니다) */}
                     <div className="swiper-zoom-container w-full h-full p-4">
                       <img 
                         src={src} 
@@ -118,7 +116,6 @@ export default function Gallery() {
         )}
       </AnimatePresence>
 
-      {/* Swiper 기본 화살표 색상을 흰색으로 변경하는 스타일 */}
       <style>{`
         .swiper-button-next, .swiper-button-prev {
           color: white !important;
