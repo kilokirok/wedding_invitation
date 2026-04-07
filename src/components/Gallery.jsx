@@ -9,19 +9,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/zoom'; // 핀치 줌 필수 CSS
 
 // 이미지 import
-import img1 from '../assets/gallery/photo1.jpeg';
-import img2 from '../assets/gallery/photo2.jpeg';
-import img3 from '../assets/gallery/photo3.jpeg';
-import img4 from '../assets/gallery/photo4.jpeg';
-import img5 from '../assets/gallery/photo5.jpeg';
-import img6 from '../assets/gallery/photo6.jpeg';
-import img7 from '../assets/gallery/photo7.jpeg';
-import img8 from '../assets/gallery/photo8.jpeg';
-import img9 from '../assets/gallery/photo9.jpeg';
-import img10 from '../assets/gallery/photo10.jpeg';
-import img11 from '../assets/gallery/photo11.jpeg';
+import img1 from '../assets/gallery/photo1.jpg';
+import img2 from '../assets/gallery/photo2.jpg';
+import img3 from '../assets/gallery/photo3.jpg';
+import img4 from '../assets/gallery/photo4.jpg';
+import img5 from '../assets/gallery/photo5.jpg';
+import img6 from '../assets/gallery/photo6.jpg';
+import img7 from '../assets/gallery/photo7.jpg';
+import img8 from '../assets/gallery/photo8.jpg';
+import img9 from '../assets/gallery/photo9.jpg';
+import img10 from '../assets/gallery/photo10.jpg';
+import img11 from '../assets/gallery/photo11.jpg';
 import img12 from '../assets/gallery/photo12.jpg';
-import img13 from '../assets/gallery/photo13.jpeg';
+import img13 from '../assets/gallery/photo13.jpg';
 
 const images = [
     img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13
