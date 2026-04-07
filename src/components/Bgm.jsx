@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 // mp3 파일 import (경로는 실제 파일 위치에 맞게 수정)
-import musicFile from '../assets/bgm.mp3'; 
+import musicFile from '../assets/bgm.mov'; 
 
 export default function BackgroundMusic() {
   const [isPlaying, setIsPlaying] = useState(false);
