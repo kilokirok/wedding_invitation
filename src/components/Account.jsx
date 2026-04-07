@@ -74,7 +74,7 @@ export default function Account() {
   // 2. 신부측 계좌 목록
   const brideAccounts = [
     { name: "김치곤", relation: "아버지", bank: "NH농협", account: "659-02-018032" },
-    { name: "정수민", relation: "어머니", bank: "하나은행", account: "-" },
+    { name: "정수민", relation: "어머니", bank: "NH농협", account: "627-02-216156" },
     { name: "김채린", relation: "신부", bank: "국민은행", account: "92717976341" },
   ];
 
