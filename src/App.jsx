@@ -10,7 +10,7 @@ import Guestbook from './components/Guestbook';
 // 이미지 import
 import thumbnail from './assets/gallery/photo7.jpg';
 import mainBgImage from './assets/gallery/photo13.jpg';
-import bgmFile from './assets/bgm.mp3'; // 🎵 음악 파일 (경로 확인해주세요!)
+import bgmFile from './assets/bgm.mov'; // 🎵 음악 파일 (경로 확인해주세요!)
 import PhotoUpload from './components/PhotoUpload';
 
 export default function App() {
