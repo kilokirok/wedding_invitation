@@ -88,7 +88,7 @@ export default function Gallery() {
             >
               <Swiper
                 modules={[Navigation, Pagination, A11y, Zoom]}
-                zoom={{ maxRatio: 2 }} // 최대 3배까지 핀치 줌 허용
+                zoom={{ maxRatio: 1 }} // 최대 3배까지 핀치 줌 허용
                 initialSlide={selectedIndex}
                 spaceBetween={20}
                 slidesPerView={1}
