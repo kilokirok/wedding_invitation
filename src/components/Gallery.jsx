@@ -6,34 +6,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/zoom'; // 핀치 줌 필수 CSS
+import 'swiper/css/zoom'; 
 
-// 이미지 import
-import img1 from '../assets/gallery/photo1.jpg';
-import img2 from '../assets/gallery/photo2.jpg';
-import img3 from '../assets/gallery/photo3.jpg';
-import img4 from '../assets/gallery/photo4.jpg';
-import img5 from '../assets/gallery/photo5.jpg';
-import img6 from '../assets/gallery/photo6.jpg';
-import img7 from '../assets/gallery/photo7.jpg';
-import img8 from '../assets/gallery/photo8.jpg';
-import img9 from '../assets/gallery/photo9.jpg';
-import img10 from '../assets/gallery/photo10.jpg';
-import img11 from '../assets/gallery/photo11.jpg';
-import img12 from '../assets/gallery/photo12.jpg';
-import img13 from '../assets/gallery/photo13.jpg';
-
-const images = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13
-];
+// 👇 기존의 수많은 import img1... 삭제하고 아래 2줄로 대체!
+const imageModules = import.meta.glob('../assets/gallery/*.{jpg,jpeg,png,webp}', { 
+  eager: true, 
+  import: 'default' 
+});
+const images = Object.values(imageModules);
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   return (
     <div className="w-full px-4">
-      
-      {/* 1. 메인 갤러리 (작은 화면용 슬라이더) */}
+      {/* 1. 메인 갤러리 */}
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={10}
@@ -47,7 +34,7 @@ export default function Gallery() {
           <SwiperSlide key={index}>
             <div 
               className="w-full h-full cursor-pointer"
-              onClick={() => setSelectedIndex(index)} // 터치 시 모달 열기
+              onClick={() => setSelectedIndex(index)} 
             >
               <img 
                 src={src} 
@@ -63,7 +50,7 @@ export default function Gallery() {
         사진을 터치해서 크게 볼 수 있어요
       </p>
 
-      {/* 2. 확대 보기 모달 (핀치 줌 적용) */}
+      {/* 2. 확대 보기 모달 */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
@@ -73,7 +60,6 @@ export default function Gallery() {
             className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
             onClick={() => setSelectedIndex(null)} 
           >
-            {/* 닫기 버튼 */}
             <button 
               className="absolute top-5 right-5 text-white/70 text-4xl font-light z-50 hover:text-white transition"
               onClick={() => setSelectedIndex(null)}
@@ -81,14 +67,13 @@ export default function Gallery() {
               &times;
             </button>
 
-            {/* 모달 내부 줌 슬라이더 */}
             <div 
               className="w-full h-full flex items-center" 
               onClick={(e) => e.stopPropagation()}
             >
               <Swiper
                 modules={[Navigation, Pagination, A11y, Zoom]}
-                zoom={{ maxRatio: 2 }} // 최대 3배까지 핀치 줌 허용
+                zoom={{ maxRatio: 2 }} // 👈 아까 말씀하신 최대 확대치 설정 (현재 2배)
                 initialSlide={selectedIndex}
                 spaceBetween={20}
                 slidesPerView={1}
@@ -98,7 +83,6 @@ export default function Gallery() {
               >
                 {images.map((src, index) => (
                   <SwiperSlide key={index}>
-                    {/* Swiper 줌 기능 충돌을 막기 위해 컨테이너에 임의의 크기나 패딩을 주지 않습니다 */}
                     <div className="swiper-zoom-container">
                       <img 
                         src={src} 
@@ -110,7 +94,6 @@ export default function Gallery() {
                 ))}
               </Swiper>
             </div>
-            
           </motion.div>
         )}
       </AnimatePresence>
