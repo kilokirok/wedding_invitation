@@ -4,7 +4,7 @@ import { useState } from 'react';
 function AccountRow({ name, relation, bank, account }) {
   const handleCopy = () => {
     navigator.clipboard.writeText(`${bank} ${account}`);
-    alert("계좌번호가 복사되었습니다! ✨");
+    alert("계좌번호가 복사되었습니다.");
   };
 
   return (
