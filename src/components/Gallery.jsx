@@ -22,14 +22,14 @@ import img10 from '../assets/gallery/photo10.jpg';
 import img11 from '../assets/gallery/photo11.jpg';
 import img12 from '../assets/gallery/photo12.jpg';
 import img13 from '../assets/gallery/photo13.jpg';
-import img14 from '../assets/gallery/photo14.jpg';
-import img15 from '../assets/gallery/photo15.jpg';
-import img16 from '../assets/gallery/photo16.jpg';
-import img17 from '../assets/gallery/photo17.jpg';
-import img18 from '../assets/gallery/photo18.jpg';
-import img19 from '../assets/gallery/photo19.jpg';
-import img20 from '../assets/gallery/photo20.jpg';
-import img21 from '../assets/gallery/photo21.jpg';
+import img14 from '../assets/gallery/photo14.jpeg';
+import img15 from '../assets/gallery/photo15.jpeg';
+import img16 from '../assets/gallery/photo16.jpeg';
+import img17 from '../assets/gallery/photo17.jpeg';
+import img18 from '../assets/gallery/photo18.jpeg';
+import img19 from '../assets/gallery/photo19.jpeg';
+import img20 from '../assets/gallery/photo20.jpeg';
+import img21 from '../assets/gallery/photo21.jpeg';
 
 // 💡 여기서 순서를 자유롭게 바꾸시면 됩니다!
 const images = [
