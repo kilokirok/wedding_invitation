@@ -10,7 +10,6 @@ import 'swiper/css/zoom'; // 핀치 줌 필수 CSS
 
 // 이미지 import
 import img1 from '../assets/gallery/photo1.jpg';
-import img2 from '../assets/gallery/photo2.jpg';
 import img3 from '../assets/gallery/photo3.jpg';
 import img4 from '../assets/gallery/photo4.jpg';
 import img5 from '../assets/gallery/photo5.jpg';
@@ -36,7 +35,7 @@ import img24 from '../assets/gallery/photo24.jpeg';
 
 // 💡 여기서 순서 정하기
 const images = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24
+    img1, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24
 ];
 
 export default function Gallery() {
