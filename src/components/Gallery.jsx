@@ -33,11 +33,10 @@ import img21 from '../assets/gallery/photo21.jpeg';
 import img22 from '../assets/gallery/photo22.jpeg';
 import img23 from '../assets/gallery/photo23.jpeg';
 import img24 from '../assets/gallery/photo24.jpeg';
-import img25 from '../assets/gallery/photo25.jpeg';
 
 // 💡 여기서 순서 정하기
 const images = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24
 ];
 
 export default function Gallery() {
