@@ -21,8 +21,6 @@ import img10 from '../assets/gallery/photo10.jpg';
 import img11 from '../assets/gallery/photo11.jpg';
 import img12 from '../assets/gallery/photo12.jpg';
 import img13 from '../assets/gallery/photo13.jpg';
-import img14 from '../assets/gallery/photo14.jpeg';
-import img15 from '../assets/gallery/photo15.jpeg';
 import img16 from '../assets/gallery/photo16.jpg';
 import img17 from '../assets/gallery/photo17.jpg';
 import img18 from '../assets/gallery/photo18.jpeg';
@@ -31,7 +29,6 @@ import img20 from '../assets/gallery/photo20.jpeg';
 import img21 from '../assets/gallery/photo21.jpeg';
 import img22 from '../assets/gallery/photo22.jpeg';
 import img23 from '../assets/gallery/photo23.jpeg';
-import img24 from '../assets/gallery/photo24.jpeg';
 import img25 from '../assets/gallery/photo25.jpg';
 import img26 from '../assets/gallery/photo26.jpg';
 
